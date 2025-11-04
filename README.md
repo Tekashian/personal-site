@@ -123,6 +123,37 @@ Strona została zaprojektowana z myślą o wywołaniu efektu "wow" u odwiedzają
 - **Microinteractions** na hover
 - **Profesjonalna typografia** z gradientami
 
+## 🚀 Deployment
+
+### Vercel (Recommended)
+1. **Connect GitHub repository:**
+   - Idź na [vercel.com](https://vercel.com)
+   - Zaloguj się przez GitHub
+   - Kliknij "Import Project"
+   - Wybierz repozytorium `personal-site`
+
+2. **Automatic deployment:**
+   - Vercel automatycznie wykryje Next.js
+   - Każdy push do `main` wywołuje automatic deployment
+   - Preview builds dla pull requests
+
+3. **Environment variables (opcjonalne):**
+   ```bash
+   NEXT_PUBLIC_SITE_URL=https://yourdomain.vercel.app
+   ```
+
+### Manual Deployment
+```bash
+npm run build
+npm run start
+```
+
+---
+
+**Live Demo:** https://your-portfolio.vercel.app
+
+**GitHub Repository:** https://github.com/Tekashian/personal-site
+
 ---
 
 **Tip:** Strona automatycznie dostosowuje się do preferencji kolorów systemu użytkownika (dark/light mode).
