@@ -19,7 +19,7 @@ export default function Home() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['o-mnie', 'projekty', 'umiejetnossci', 'kontakt'];
+      const sections = ['about', 'projects', 'skills', 'contact'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -86,8 +86,8 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="hidden md:flex space-x-8"
           >
-            {["O mnie", "Projekty", "Umiejętności", "Kontakt"].map((item, index) => {
-              const sectionId = item.toLowerCase().replace(" ", "-").replace("ę", "e").replace("ś", "s").replace("ć", "c");
+            {["About", "Projects", "Skills", "Contact"].map((item, index) => {
+              const sectionId = item.toLowerCase().replace(" ", "-");
               const isActive = activeSection === sectionId;
               
               return (
@@ -118,7 +118,7 @@ export default function Home() {
             transition={{ duration: 1, delay: 0.2 }}
           >
             <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-blue-200 to-purple-300 bg-clip-text text-transparent">
-              Cześć, jestem
+              Hi, I&apos;m a
               <span className="block text-blue-400 animate-glow">Developer</span>
             </h1>
           </motion.div>
@@ -129,9 +129,9 @@ export default function Home() {
             transition={{ duration: 1, delay: 0.4 }}
             className="text-xl md:text-2xl mb-8 text-gray-300 leading-relaxed"
           >
-            Tworzę nowoczesne aplikacje webowe z pasją do innowacji
+            I create modern web applications with passion for innovation
             <br />
-            i doskonałego user experience
+            and exceptional user experience
           </motion.p>
 
           <motion.div
@@ -141,13 +141,13 @@ export default function Home() {
             className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
           >
             <button 
-              onClick={() => scrollToSection('projekty')}
+              onClick={() => scrollToSection('projects')}
               className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl"
             >
-              Zobacz moje projekty
+              View My Projects
             </button>
             <button className="px-8 py-4 border-2 border-blue-400 rounded-full font-semibold hover:bg-blue-400 hover:text-gray-900 transition-all duration-300 transform hover:scale-105">
-              Pobierz CV
+              Download CV
             </button>
           </motion.div>
 
@@ -179,7 +179,7 @@ export default function Home() {
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1 }}
             className="animate-bounce cursor-pointer"
-            onClick={() => scrollToSection('o-mnie')}
+            onClick={() => scrollToSection('about')}
           >
             <ChevronDown size={32} className="mx-auto text-blue-400 hover:text-blue-300 transition-colors duration-300" />
           </motion.div>
@@ -187,7 +187,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="o-mnie" className="relative z-10 py-20 px-6">
+      <section id="about" className="relative z-10 py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
@@ -199,26 +199,26 @@ export default function Home() {
               className="space-y-6"
             >
               <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                O mnie
+                About Me
               </h2>
               <div className="space-y-4 text-gray-300 leading-relaxed">
                 <p className="text-lg">
-                  Jestem pasjonatem programowania z ponad <span className="text-blue-400 font-semibold">3 laty doświadczenia</span> w tworzeniu nowoczesnych aplikacji webowych. Specjalizuję się w technologiach frontendowych i backendowych.
+                  I&apos;m a passionate developer with over <span className="text-blue-400 font-semibold">3 years of experience</span> creating modern web applications. I specialize in both frontend and backend technologies.
                 </p>
                 <p>
-                  Moja przygoda z programowaniem rozpoczęła się od ciekawości świata technologii, która przekształciła się w prawdziwą pasję. Uwielbiam rozwiązywać skomplikowane problemy i tworzyć rozwiązania, które mają realny wpływ na użytkowników.
+                  My journey with programming started from curiosity about the world of technology, which transformed into a true passion. I love solving complex problems and creating solutions that have a real impact on users.
                 </p>
                 <p>
-                  Obecnie skupiam się na rozwoju w obszarze <span className="text-purple-400 font-semibold">React/Next.js</span> oraz <span className="text-green-400 font-semibold">Node.js</span>, ale zawsze jestem otwarty na naukę nowych technologii.
+                  Currently, I focus on developing with <span className="text-purple-400 font-semibold">React/Next.js</span> and <span className="text-green-400 font-semibold">Node.js</span>, but I&apos;m always open to learning new technologies.
                 </p>
               </div>
               
               {/* Stats */}
               <div className="grid grid-cols-3 gap-6 pt-6">
                 {[
-                  { number: "15+", label: "Projektów" },
-                  { number: "3+", label: "Lat doświadczenia" },
-                  { number: "50+", label: "Zadowolonych klientów" }
+                  { number: "15+", label: "Projects" },
+                  { number: "3+", label: "Years Experience" },
+                  { number: "50+", label: "Happy Clients" }
                 ].map((stat, index) => (
                   <motion.div
                     key={stat.label}
@@ -257,7 +257,7 @@ export default function Home() {
 
               {/* Quick Skills */}
               <div className="space-y-4">
-                <h3 className="text-xl font-semibold text-center lg:text-left">Główne umiejętności</h3>
+                <h3 className="text-xl font-semibold text-center lg:text-left">Core Skills</h3>
                 <div className="space-y-3">
                   {[
                     { skill: "Frontend Development", level: 90 },
@@ -296,7 +296,7 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section id="projekty" className="relative z-10 py-20 px-6">
+      <section id="projects" className="relative z-10 py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -306,10 +306,10 @@ export default function Home() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              Moje Projekty
+              My Projects
             </h2>
             <p className="text-xl text-gray-300">
-              Odkryj portfolio moich najnowszych projektów i realizacji
+              Discover my portfolio of latest projects and implementations
             </p>
           </motion.div>
 
@@ -328,7 +328,7 @@ export default function Home() {
               <div className="absolute top-6 right-6 z-10">
                 <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black text-sm font-bold px-4 py-2 rounded-full flex items-center gap-2">
                   <span className="w-2 h-2 bg-black/20 rounded-full animate-pulse" />
-                  Projekt główny
+                  Featured Project
                 </div>
               </div>
 
@@ -372,38 +372,38 @@ export default function Home() {
                       PolyFund
                     </h3>
                     <p className="text-gray-300 text-lg leading-relaxed">
-                      Zdecentralizowana platforma crowdfundingowa działająca w technologii blockchain. 
-                      PolyFund umożliwia transparentne finansowanie projektów społecznych i charytatywnych 
-                      z pełną auditowalnością transakcji on-chain i modułową architekturą smart kontraktów.
+                      Decentralized crowdfunding platform operating on blockchain technology. 
+                      PolyFund enables transparent financing of social and charitable projects 
+                      with full on-chain transaction auditability and modular smart contract architecture.
                     </p>
                   </div>
 
                   {/* Key Features */}
                   <div className="space-y-3">
-                    <h4 className="text-lg font-semibold text-emerald-400">Kluczowe funkcje:</h4>
+                    <h4 className="text-lg font-semibold text-emerald-400">Key Features:</h4>
                     <ul className="space-y-2 text-gray-300">
                       <li className="flex items-center gap-2">
                         <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full" />
-                        Transparentne, on-chain fundraising z auditowalnością
+                        Transparent, on-chain fundraising with full auditability
                       </li>
                       <li className="flex items-center gap-2">
                         <div className="w-1.5 h-1.5 bg-teal-400 rounded-full" />
-                        Modularna architektura smart kontraktów (governance, security, analytics)
+                        Modular smart contract architecture (governance, security, analytics)
                       </li>
                       <li className="flex items-center gap-2">
                         <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full" />
-                        Zaawansowany system refund&apos;ów i scheduled payouts
+                        Advanced refund system and scheduled payouts
                       </li>
                       <li className="flex items-center gap-2">
                         <div className="w-1.5 h-1.5 bg-blue-400 rounded-full" />
-                        Lightweight Core z delegowaniem do specialized modules
+                        Lightweight Core with delegation to specialized modules
                       </li>
                     </ul>
                   </div>
 
                   {/* Tech Stack */}
                   <div className="space-y-3">
-                    <h4 className="text-lg font-semibold text-teal-400">Stack technologiczny:</h4>
+                    <h4 className="text-lg font-semibold text-teal-400">Tech Stack:</h4>
                     <div className="flex flex-wrap gap-2">
                       {["Solidity", "Next.js", "TypeScript", "Ethereum", "Web3.js", "Tailwind CSS", "Smart Contracts", "IPFS"].map((tech) => (
                         <span
@@ -448,13 +448,13 @@ export default function Home() {
 
           {/* Other Projects Grid */}
           <div className="space-y-8">
-            <h3 className="text-2xl font-semibold text-center text-gray-300">Inne projekty</h3>
+            <h3 className="text-2xl font-semibold text-center text-gray-300">Other Projects</h3>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
                 title: "E-commerce Dashboard",
-                description: "Kompletny dashboard administracyjny dla sklepu internetowego z analityką sprzedaży i zarządzaniem produktami.",
+                description: "Complete admin dashboard for online store with sales analytics and product management system.",
                 tech: ["Next.js", "TypeScript", "Prisma", "Chart.js"],
                 image: "/api/placeholder/400/250",
                 github: "#",
@@ -463,7 +463,7 @@ export default function Home() {
               },
               {
                 title: "Task Management App",
-                description: "Aplikacja do zarządzania zadaniami zespołowymi z real-time collaboration i integracji z popularnymi narzędziami.",
+                description: "Team task management application with real-time collaboration and popular tool integrations.",
                 tech: ["Vue.js", "Express", "MongoDB", "Socket.io"],
                 image: "/api/placeholder/400/250",
                 github: "#",
@@ -472,7 +472,7 @@ export default function Home() {
               },
               {
                 title: "AI Chat Bot",
-                description: "Inteligentny chatbot wykorzystujący sztuczną inteligencję do obsługi klienta z integracją OpenAI API.",
+                description: "Intelligent chatbot using artificial intelligence for customer service with OpenAI API integration.",
                 tech: ["Python", "FastAPI", "OpenAI", "Redis"],
                 image: "/api/placeholder/400/250",
                 github: "#",
@@ -481,7 +481,7 @@ export default function Home() {
               },
               {
                 title: "Weather App",
-                description: "Responsywna aplikacja pogodowa z geolokalizacją, prognozami i piękną animowaną grafiką pogodową.",
+                description: "Responsive weather application with geolocation, forecasts and beautiful animated weather graphics.",
                 tech: ["React Native", "Redux", "Weather API", "Lottie"],
                 image: "/api/placeholder/400/250",
                 github: "#",
@@ -490,7 +490,7 @@ export default function Home() {
               },
               {
                 title: "Crypto Tracker",
-                description: "Aplikacja do śledzenia kryptowalut z wykresami w czasie rzeczywistym i alertami cenowymi.",
+                description: "Cryptocurrency tracking application with real-time charts and price alerts.",
                 tech: ["React", "D3.js", "WebSocket", "CoinGecko API"],
                 image: "/api/placeholder/400/250",
                 github: "#",
@@ -581,10 +581,10 @@ export default function Home() {
             className="text-center mt-12"
           >
             <button 
-              onClick={() => scrollToSection('kontakt')}
+              onClick={() => scrollToSection('contact')}
               className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl"
             >
-              Skontaktuj się ze mną
+              Get In Touch
             </button>
           </motion.div>
           </div>
@@ -592,7 +592,7 @@ export default function Home() {
       </section>
 
       {/* Skills Section */}
-      <section id="umiejetnossci" className="relative z-10 py-20 px-6">
+      <section id="skills" className="relative z-10 py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -602,10 +602,10 @@ export default function Home() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              Umiejętności
+              Skills
             </h2>
             <p className="text-xl text-gray-300">
-              Nowoczesny stack technologiczny do tworzenia aplikacji przyszłości
+              Modern technology stack for building applications of the future
             </p>
           </motion.div>
 
@@ -634,7 +634,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="kontakt" className="relative z-10 py-20 px-6">
+      <section id="contact" className="relative z-10 py-20 px-6">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -644,10 +644,10 @@ export default function Home() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              Skontaktuj się
+              Get In Touch
             </h2>
             <p className="text-xl text-gray-300">
-              Masz projekt w planach? Porozmawiajmy o tym!
+              Have a project in mind? Let&apos;s talk about it!
             </p>
           </motion.div>
 
@@ -660,11 +660,11 @@ export default function Home() {
               viewport={{ once: true }}
               className="space-y-8"
             >
-              <h3 className="text-2xl font-semibold mb-6">Informacje kontaktowe</h3>
+              <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
               
               <div className="space-y-6">
                 {[
-                  { icon: Mail, title: "Email", info: "kontakt@example.com", link: "mailto:kontakt@example.com" },
+                  { icon: Mail, title: "Email", info: "contact@example.com", link: "mailto:contact@example.com" },
                   { icon: Github, title: "GitHub", info: "@username", link: "https://github.com/username" },
                   { icon: Linkedin, title: "LinkedIn", info: "/in/username", link: "https://linkedin.com/in/username" }
                 ].map(({ icon: Icon, title, info, link }, index) => (
@@ -696,10 +696,10 @@ export default function Home() {
                 viewport={{ once: true }}
                 className="mt-8 p-6 bg-gradient-to-br from-blue-600/10 to-purple-600/10 rounded-xl border border-blue-400/20"
               >
-                <h4 className="text-lg font-semibold mb-2 text-blue-400">Dostępność</h4>
+                <h4 className="text-lg font-semibold mb-2 text-blue-400">Availability</h4>
                 <p className="text-gray-300 text-sm">
-                  Obecnie otwarty na nowe projekty freelance i współpracę. 
-                  Odpowiadam zwykle w ciągu 24 godzin.
+                  Currently open to new freelance projects and collaborations. 
+                  I usually respond within 24 hours.
                 </p>
               </motion.div>
             </motion.div>
@@ -712,7 +712,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="space-y-6"
             >
-              <h3 className="text-2xl font-semibold mb-6">Wyślij wiadomość</h3>
+              <h3 className="text-2xl font-semibold mb-6">Send Message</h3>
               
               <form className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -720,11 +720,11 @@ export default function Home() {
                     whileFocus={{ scale: 1.02 }}
                     className="space-y-2"
                   >
-                    <label className="text-sm font-medium text-gray-300">Imię</label>
+                    <label className="text-sm font-medium text-gray-300">Name</label>
                     <input
                       type="text"
                       className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:border-blue-400 focus:outline-none transition-all duration-300 backdrop-blur-sm"
-                      placeholder="Twoje imię"
+                      placeholder="Your name"
                     />
                   </motion.div>
                   <motion.div
@@ -735,7 +735,7 @@ export default function Home() {
                     <input
                       type="email"
                       className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:border-blue-400 focus:outline-none transition-all duration-300 backdrop-blur-sm"
-                      placeholder="twoj@email.com"
+                      placeholder="your@email.com"
                     />
                   </motion.div>
                 </div>
@@ -744,11 +744,11 @@ export default function Home() {
                   whileFocus={{ scale: 1.02 }}
                   className="space-y-2"
                 >
-                  <label className="text-sm font-medium text-gray-300">Temat</label>
+                  <label className="text-sm font-medium text-gray-300">Subject</label>
                   <input
                     type="text"
                     className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:border-blue-400 focus:outline-none transition-all duration-300 backdrop-blur-sm"
-                    placeholder="Temat wiadomości"
+                    placeholder="Message subject"
                   />
                 </motion.div>
                 
@@ -756,11 +756,11 @@ export default function Home() {
                   whileFocus={{ scale: 1.02 }}
                   className="space-y-2"
                 >
-                  <label className="text-sm font-medium text-gray-300">Wiadomość</label>
+                  <label className="text-sm font-medium text-gray-300">Message</label>
                   <textarea
                     rows={5}
                     className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:border-blue-400 focus:outline-none transition-all duration-300 backdrop-blur-sm resize-none"
-                    placeholder="Opisz swój projekt lub zadaj pytanie..."
+                    placeholder="Describe your project or ask a question..."
                   />
                 </motion.div>
                 
@@ -770,7 +770,7 @@ export default function Home() {
                   whileTap={{ scale: 0.95 }}
                   className="w-full px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-lg font-semibold transition-all duration-300 transform hover:shadow-2xl"
                 >
-                  Wyślij wiadomość
+                  Send Message
                 </motion.button>
               </form>
             </motion.div>
@@ -782,7 +782,7 @@ export default function Home() {
       <footer className="relative z-10 py-8 px-6 border-t border-white/10">
         <div className="max-w-6xl mx-auto text-center">
           <p className="text-gray-400">
-            © 2024 Portfolio. Stworzone z pasją i najnowszymi technologiami.
+            © 2024 Portfolio. Built with passion and cutting-edge technologies.
           </p>
         </div>
       </footer>
