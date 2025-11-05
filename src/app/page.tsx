@@ -406,28 +406,51 @@ export default function Home() {
                   </div>
 
                   {/* Action Buttons */}
-                  <div className="flex gap-4 pt-4">
+                  <div className="flex flex-wrap gap-3 pt-4 relative z-20">
                     <motion.a
-                      href="https://poly-fund.vercel.app/whitepaper"
+                      href="https://github.com/Tekashian/PoliDao-frontend"
                       target="_blank"
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className="flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 rounded-xl transition-all duration-300 font-medium"
+                      className="flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 rounded-xl transition-all duration-300 font-medium cursor-pointer relative z-10"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        window.open("https://github.com/Tekashian/PoliDao-frontend", "_blank");
+                      }}
                     >
                       <Github size={20} />
-                      Whitepaper
+                      <span>GitHub</span>
                     </motion.a>
                     <motion.a
-                      href="https://poly-fund.vercel.app"
+                      href="https://poly-fund.vercel.app/"
                       target="_blank"
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 rounded-xl transition-all duration-300 font-medium"
+                      className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 rounded-xl transition-all duration-300 font-medium cursor-pointer relative z-10"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        window.open("https://poly-fund.vercel.app/", "_blank");
+                      }}
                     >
                       <ExternalLink size={20} />
                       Live Demo
+                    </motion.a>
+                    <motion.a
+                      href="https://sepolia.etherscan.io/address/0x9362d1b929c8cC161830292b95Ad5E1187239a38"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 rounded-xl transition-all duration-300 font-medium text-sm cursor-pointer relative z-10"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        window.open("https://sepolia.etherscan.io/address/0x9362d1b929c8cC161830292b95Ad5E1187239a38", "_blank");
+                      }}
+                    >
+                      <Code size={20} />
+                      Smart Contract
                     </motion.a>
                   </div>
                 </div>
