@@ -335,7 +335,7 @@ export default function Home() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8">
                 {/* Project Image */}
                 <div className="relative">
-                  <div className="aspect-video rounded-xl overflow-hidden group-hover:scale-105 transition-transform duration-500 border border-white/10">
+                  <div className="aspect-video rounded-xl overflow-hidden group-hover:scale-105 transition-transform duration-500 border border-white/10 mb-4">
                     <video 
                       className="w-full h-full object-cover"
                       autoPlay
@@ -347,6 +347,25 @@ export default function Home() {
                       <source src="/videos/demo2.mp4" type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
+                  </div>
+                  
+                  {/* Logo */}
+                  <div className="flex justify-center items-center py-8">
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.6, delay: 0.2 }}
+                      viewport={{ once: true }}
+                      whileHover={{ scale: 1.05, rotate: 3 }}
+                      className="relative"
+                    >
+                      <img 
+                        src="/videos/logo2.png" 
+                        alt="PolyFund Logo" 
+                        className="h-64 w-auto object-contain filter drop-shadow-2xl hover:drop-shadow-3xl transition-all duration-300"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-teal-500/10 rounded-full blur-2xl opacity-0 hover:opacity-100 transition-opacity duration-500 scale-150" />
+                    </motion.div>
                   </div>
                   
                   {/* Floating elements */}
@@ -394,7 +413,7 @@ export default function Home() {
                   <div className="space-y-3">
                     <h4 className="text-lg font-semibold text-teal-400">Tech Stack:</h4>
                     <div className="flex flex-wrap gap-2">
-                      {["Solidity", "Next.js", "TypeScript", "Ethereum", "Web3.js", "Tailwind CSS", "Smart Contracts", "IPFS"].map((tech) => (
+                      {["Solidity", "Next.js", "TypeScript", "Ethereum", "Web3.js", "Tailwind CSS", "Smart Contracts", "MongoDB"].map((tech) => (
                         <span
                           key={tech}
                           className="px-3 py-1 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 text-emerald-300 text-sm rounded-full border border-emerald-500/30"
