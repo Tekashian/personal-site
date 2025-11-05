@@ -336,28 +336,17 @@ export default function Home() {
                 {/* Project Image */}
                 <div className="relative">
                   <div className="aspect-video rounded-xl overflow-hidden group-hover:scale-105 transition-transform duration-500 border border-white/10">
-                    {/* PolyFund Hero Image */}
-                    <div className="w-full h-full bg-gradient-to-br from-emerald-400 via-teal-500 to-cyan-600 relative">
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="text-center space-y-4">
-                          {/* PolyFund Logo Style */}
-                          <div className="w-16 h-16 bg-white rounded-2xl mx-auto flex items-center justify-center shadow-2xl">
-                            <div className="w-8 h-8 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center">
-                              <div className="w-4 h-4 bg-white rounded-full"></div>
-                            </div>
-                          </div>
-                          <div className="text-white font-bold text-2xl">PolyFund</div>
-                          <div className="text-emerald-100 text-sm">Decentralized Community Funding</div>
-                        </div>
-                      </div>
-                      {/* Animated illustration elements */}
-                      <div className="absolute top-4 left-4 w-8 h-8 bg-white/20 rounded-full animate-pulse"></div>
-                      <div className="absolute bottom-4 right-4 w-6 h-6 bg-white/30 rounded-full animate-pulse" style={{ animationDelay: "1s" }}></div>
-                      <div className="absolute top-1/2 right-8 w-4 h-4 bg-white/20 rounded-full animate-pulse" style={{ animationDelay: "2s" }}></div>
-                    </div>
-                    <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <Play size={48} className="text-white" />
-                    </div>
+                    <video 
+                      className="w-full h-full object-cover"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="auto"
+                    >
+                      <source src="/videos/demo2.mp4" type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
                   </div>
                   
                   {/* Floating elements */}
