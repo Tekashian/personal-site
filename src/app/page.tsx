@@ -413,7 +413,7 @@ export default function Home() {
                   <div className="space-y-3">
                     <h4 className="text-lg font-semibold text-teal-400">Tech Stack:</h4>
                     <div className="flex flex-wrap gap-2">
-                      {["Solidity", "Next.js", "TypeScript", "Ethereum", "Web3.js", "Tailwind CSS", "Smart Contracts", "MongoDB"].map((tech) => (
+                      {["Solidity", "Next.js", "TypeScript", "Ethereum", "Web3.js", "Tailwind CSS", "Smart Contracts", "MongoDB", "OpenZeppelin"].map((tech) => (
                         <span
                           key={tech}
                           className="px-3 py-1 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 text-emerald-300 text-sm rounded-full border border-emerald-500/30"
@@ -484,47 +484,38 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                title: "E-commerce Dashboard",
-                description: "Complete admin dashboard for online store with sales analytics and product management system.",
-                tech: ["Next.js", "TypeScript", "Prisma", "Chart.js"],
+                title: "AltrSeed DeFi Platform",
+                description: "Professional DeFi seed funding platform with sophisticated tokenomics and investor portal. Backend powered by CrowdFund smart contracts with automated milestone-based payments.",
+                tech: ["TypeScript", "Solidity", "DeFi", "Smart Contracts", "React"],
                 image: "/api/placeholder/400/250",
-                github: "#",
-                live: "#",
-                featured: false
-              },
-              {
-                title: "Task Management App",
-                description: "Team task management application with real-time collaboration and popular tool integrations.",
-                tech: ["Vue.js", "Express", "MongoDB", "Socket.io"],
-                image: "/api/placeholder/400/250",
-                github: "#",
-                live: "#",
-                featured: false
-              },
-              {
-                title: "AI Chat Bot",
-                description: "Intelligent chatbot using artificial intelligence for customer service with OpenAI API integration.",
-                tech: ["Python", "FastAPI", "OpenAI", "Redis"],
-                image: "/api/placeholder/400/250",
-                github: "#",
+                github: "https://github.com/Tekashian/AltrSeedFrontEnd",
                 live: "#",
                 featured: true
               },
               {
-                title: "Weather App",
-                description: "Responsive weather application with geolocation, forecasts and beautiful animated weather graphics.",
-                tech: ["React Native", "Redux", "Weather API", "Lottie"],
+                title: "Decentralized Crowdfunding Core",
+                description: "Smart contract backend powering AltrSeed platform. Enables transparent project funding with automated escrow, milestone payments, and investor protection mechanisms.",
+                tech: ["Solidity", "Web3.js", "Smart Contracts", "Ethereum", "DeFi"],
                 image: "/api/placeholder/400/250",
-                github: "#",
+                github: "https://github.com/Tekashian/CrowdFund",
                 live: "#",
                 featured: false
               },
               {
-                title: "Crypto Tracker",
-                description: "Cryptocurrency tracking application with real-time charts and price alerts.",
-                tech: ["React", "D3.js", "WebSocket", "CoinGecko API"],
+                title: "Binance FIX Trading Bot",
+                description: "High-frequency trading bot optimized for Binance FIX API with microsecond latency. Built in Go for maximum performance in financial markets operations.",
+                tech: ["Go", "Trading APIs", "Financial Systems", "Performance"],
                 image: "/api/placeholder/400/250",
-                github: "#",
+                github: "https://github.com/Tekashian/BinanceLimitFixBot-Najszybsza-optymalizacja",
+                live: "#",
+                featured: false
+              },
+              {
+                title: "Solana Blockchain Tools",
+                description: "Utility tools and analyzers for Solana blockchain ecosystem. Features transaction monitoring, wallet analysis, and custom RPC integrations for multi-chain development.",
+                tech: ["JavaScript", "Solana", "Blockchain Analysis", "RPC", "Web3"],
+                image: "/api/placeholder/400/250",
+                github: "https://github.com/Tekashian/solanachecker",
                 live: "#",
                 featured: false
               }
