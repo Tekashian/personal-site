@@ -109,7 +109,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white overflow-hidden relative">
       {/* Animated Background */}
-      <div className="absolute inset-0">
+      <div className="fixed inset-0 pointer-events-none z-0">
         <div 
           className="absolute w-96 h-96 bg-blue-500/20 rounded-full blur-3xl transition-transform duration-75 ease-out"
           style={{
