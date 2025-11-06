@@ -7,6 +7,8 @@ import { useState, useEffect } from "react";
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [activeSection, setActiveSection] = useState('');
+  const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  const [formMessage, setFormMessage] = useState('');
 
   useEffect(() => {
     const updateMousePosition = (e: MouseEvent) => {
@@ -49,6 +51,48 @@ export default function Home() {
         top: y,
         behavior: 'smooth'
       });
+    }
+  };
+
+  // Handle contact form submission
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setFormStatus('sending');
+    setFormMessage('');
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setFormStatus('success');
+        setFormMessage('Thank you! Your message has been sent successfully. I\'ll get back to you soon!');
+        form.reset();
+        
+        // Reset success message after 5 seconds
+        setTimeout(() => {
+          setFormStatus('idle');
+          setFormMessage('');
+        }, 5000);
+      } else {
+        throw new Error(data.message || 'Something went wrong');
+      }
+    } catch (error) {
+      setFormStatus('error');
+      setFormMessage('Oops! Something went wrong. Please try again or contact me directly at jakub.grzegorz.lacki@gmail.com');
+      
+      // Reset error message after 5 seconds
+      setTimeout(() => {
+        setFormStatus('idle');
+        setFormMessage('');
+      }, 5000);
     }
   };
 
@@ -757,7 +801,13 @@ export default function Home() {
             >
               <h3 className="text-2xl font-semibold mb-6">Send Message</h3>
               
-              <form className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-4">
+                {/* Hidden Web3Forms Access Key - Register at https://web3forms.com for free */}
+                <input type="hidden" name="access_key" value="8f3e0c1a-4b5d-4e2f-9a3b-1c8d7e6f5a4b" />
+                <input type="hidden" name="redirect" value="false" />
+                <input type="hidden" name="email" value="jakub.grzegorz.lacki@gmail.com" />
+                <input type="checkbox" name="botcheck" style={{ display: 'none' }} />
+                
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <motion.div
                     whileFocus={{ scale: 1.02 }}
@@ -766,7 +816,9 @@ export default function Home() {
                     <label className="text-sm font-medium text-gray-300">Name</label>
                     <input
                       type="text"
-                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:border-blue-400 focus:outline-none transition-all duration-300 backdrop-blur-sm"
+                      name="name"
+                      required
+                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:border-blue-400 focus:outline-none transition-all duration-300 backdrop-blur-sm text-white"
                       placeholder="Your name"
                     />
                   </motion.div>
@@ -777,7 +829,9 @@ export default function Home() {
                     <label className="text-sm font-medium text-gray-300">Email</label>
                     <input
                       type="email"
-                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:border-blue-400 focus:outline-none transition-all duration-300 backdrop-blur-sm"
+                      name="sender_email"
+                      required
+                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:border-blue-400 focus:outline-none transition-all duration-300 backdrop-blur-sm text-white"
                       placeholder="your@email.com"
                     />
                   </motion.div>
@@ -790,7 +844,9 @@ export default function Home() {
                   <label className="text-sm font-medium text-gray-300">Subject</label>
                   <input
                     type="text"
-                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:border-blue-400 focus:outline-none transition-all duration-300 backdrop-blur-sm"
+                    name="subject"
+                    required
+                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:border-blue-400 focus:outline-none transition-all duration-300 backdrop-blur-sm text-white"
                     placeholder="Message subject"
                   />
                 </motion.div>
@@ -802,18 +858,40 @@ export default function Home() {
                   <label className="text-sm font-medium text-gray-300">Message</label>
                   <textarea
                     rows={5}
-                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:border-blue-400 focus:outline-none transition-all duration-300 backdrop-blur-sm resize-none"
+                    name="message"
+                    required
+                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:border-blue-400 focus:outline-none transition-all duration-300 backdrop-blur-sm resize-none text-white"
                     placeholder="Describe your project or ask a question..."
                   />
                 </motion.div>
                 
+                {/* Status Message */}
+                {formMessage && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className={`p-4 rounded-lg ${
+                      formStatus === 'success' 
+                        ? 'bg-green-500/20 border border-green-500/50 text-green-300' 
+                        : 'bg-red-500/20 border border-red-500/50 text-red-300'
+                    }`}
+                  >
+                    {formMessage}
+                  </motion.div>
+                )}
+                
                 <motion.button
                   type="submit"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-full px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-lg font-semibold transition-all duration-300 transform hover:shadow-2xl"
+                  disabled={formStatus === 'sending'}
+                  whileHover={{ scale: formStatus === 'sending' ? 1 : 1.05 }}
+                  whileTap={{ scale: formStatus === 'sending' ? 1 : 0.95 }}
+                  className={`w-full px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:shadow-2xl ${
+                    formStatus === 'sending'
+                      ? 'bg-gray-600 cursor-not-allowed'
+                      : 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700'
+                  }`}
                 >
-                  Send Message
+                  {formStatus === 'sending' ? 'Sending...' : 'Send Message'}
                 </motion.button>
               </form>
             </motion.div>
