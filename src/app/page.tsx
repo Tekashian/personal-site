@@ -271,10 +271,10 @@ export default function Home() {
                   I&apos;m a <span className="text-blue-400 font-semibold">Blockchain Architect & Full-Stack Developer</span> with over <span className="text-purple-400 font-semibold">3 years of experience</span> building production-grade decentralized applications and high-performance trading systems.
                 </p>
                 <p>
-                  My expertise spans from <span className="text-emerald-400 font-semibold">architecting modular smart contract systems</span> like PolyFund (a comprehensive DAO governance and crowdfunding platform) to developing <span className="text-orange-400 font-semibold">microsecond-latency trading bots</span> for Binance FIX API using Go.
+                  My expertise spans from <span className="text-emerald-400 font-semibold">architecting modular smart contract systems</span> like PolyFund (a decentralized crowdfunding platform with role-based governance where authorized members can create funding proposals and all users can participate in voting), developed using <span className="text-yellow-400 font-semibold">Hardhat</span> for contract development, testing, and deployment, to building <span className="text-orange-400 font-semibold">high-frequency trading bots</span> for Binance using the FIX API protocol with Go, achieving microsecond-latency order execution and real-time market data processing.
                 </p>
                 <p>
-                  I specialize in <span className="text-cyan-400 font-semibold">multi-chain development</span> (Ethereum & Solana), having built on-chain analytics tools that monitor wallet addresses and track transactions in real-time. My work includes DeFi platforms with sophisticated tokenomics, automated escrow systems, and transparent governance mechanisms secured by OpenZeppelin standards.
+                  I specialize in <span className="text-cyan-400 font-semibold">multi-chain development</span> (Ethereum & Solana), having built on-chain analytics tools that monitor wallet addresses and track transactions in real-time. My smart contract development workflow includes comprehensive testing with Hardhat, security audits following OpenZeppelin standards, and deployment strategies across multiple networks. My work encompasses DeFi platforms with sophisticated tokenomics, automated escrow systems, and transparent voting mechanisms.
                 </p>
                 <p>
                   Beyond blockchain, I&apos;m proficient in modern web frameworks — from <span className="text-pink-400 font-semibold">React/Next.js</span> and <span className="text-green-400 font-semibold">Vue 3</span> to <span className="text-indigo-400 font-semibold">Gatsby</span>, crafting high-performance applications with advanced animations using Framer Motion, GSAP, and custom parallax implementations. I believe in writing clean, type-safe code with TypeScript and building systems that scale.
@@ -284,9 +284,9 @@ export default function Home() {
               {/* Stats */}
               <div className="grid grid-cols-3 gap-6 pt-6">
                 {[
-                  { number: "18+", label: "Projects" },
+                  { number: "10+", label: "Projects" },
                   { number: "3+", label: "Years Experience" },
-                  { number: "2", label: "Blockchains" }
+                  { number: "4", label: "Blockchains" }
                 ].map((stat, index) => (
                   <motion.div
                     key={stat.label}
