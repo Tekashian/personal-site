@@ -209,19 +209,33 @@ export default function Home() {
             className="flex justify-center space-x-6 mb-12"
           >
             {[
-              { icon: Github, href: "https://github.com/Tekashian" },
-              { icon: Linkedin, href: "https://www.linkedin.com/in/jakub-%C5%82%C4%85cki-9a059a397/" },
-              { icon: Mail, href: "mailto:jakub.grzegorz.lacki@gmail.com" }
-            ].map(({ icon: Icon, href }, index) => (
-              <motion.a
-                key={index}
-                href={href}
-                whileHover={{ scale: 1.2, rotate: 5 }}
-                whileTap={{ scale: 0.9 }}
-                className="p-3 bg-white/10 backdrop-blur-sm rounded-full hover:bg-white/20 transition-all duration-300"
-              >
-                <Icon size={24} />
-              </motion.a>
+              { icon: Github, href: "https://github.com/Tekashian", external: true },
+              { icon: Linkedin, href: "https://www.linkedin.com/in/jakub-%C5%82%C4%85cki-9a059a397/", external: true },
+              { icon: Mail, href: "#contact", external: false }
+            ].map(({ icon: Icon, href, external }, index) => (
+              external ? (
+                <motion.a
+                  key={index}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.2, rotate: 5 }}
+                  whileTap={{ scale: 0.9 }}
+                  className="p-3 bg-white/10 backdrop-blur-sm rounded-full hover:bg-white/20 transition-all duration-300"
+                >
+                  <Icon size={24} />
+                </motion.a>
+              ) : (
+                <motion.button
+                  key={index}
+                  onClick={() => scrollToSection('contact')}
+                  whileHover={{ scale: 1.2, rotate: 5 }}
+                  whileTap={{ scale: 0.9 }}
+                  className="p-3 bg-white/10 backdrop-blur-sm rounded-full hover:bg-white/20 transition-all duration-300"
+                >
+                  <Icon size={24} />
+                </motion.button>
+              )
             ))}
           </motion.div>
 
