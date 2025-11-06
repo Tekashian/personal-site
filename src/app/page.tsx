@@ -292,10 +292,14 @@ export default function Home() {
               viewport={{ once: true }}
               className="space-y-8"
             >
-              {/* Avatar Placeholder */}
-              <div className="relative mx-auto lg:mx-0 w-64 h-64 rounded-full bg-gradient-to-br from-blue-600/20 to-purple-600/20 flex items-center justify-center border border-white/10 group hover:border-blue-400/50 transition-all duration-500">
+              {/* Avatar Photo */}
+              <div className="relative mx-auto lg:mx-0 w-64 h-64 rounded-full bg-gradient-to-br from-blue-600/20 to-purple-600/20 flex items-center justify-center border border-white/10 group hover:border-blue-400/50 transition-all duration-500 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-full group-hover:animate-pulse" />
-                <User size={80} className="text-blue-400 opacity-70" />
+                <img 
+                  src="/videos/selfie.jpg" 
+                  alt="Jakub Łącki - Blockchain Developer" 
+                  className="w-full h-full object-cover rounded-full relative z-10"
+                />
                 {/* Floating elements around avatar */}
                 <div className="absolute -top-4 -right-4 w-8 h-8 bg-blue-500/30 rounded-full animate-float" />
                 <div className="absolute -bottom-6 -left-6 w-6 h-6 bg-purple-500/30 rounded-full animate-float" style={{ animationDelay: "1s" }} />
