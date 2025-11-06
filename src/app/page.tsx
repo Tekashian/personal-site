@@ -64,14 +64,24 @@ export default function Home() {
     const formData = new FormData(form);
 
     try {
-      const response = await fetch('https://api.web3forms.com/submit', {
+      // Using FormSubmit.co - no API key needed!
+      const response = await fetch('https://formsubmit.co/ajax/jakub.grzegorz.lacki@gmail.com', {
         method: 'POST',
-        body: formData
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.get('name'),
+          email: formData.get('sender_email'),
+          subject: formData.get('subject'),
+          message: formData.get('message')
+        })
       });
 
       const data = await response.json();
 
-      if (data.success) {
+      if (response.ok && data.success) {
         setFormStatus('success');
         setFormMessage('Thank you! Your message has been sent successfully. I\'ll get back to you soon!');
         form.reset();
@@ -806,11 +816,9 @@ export default function Home() {
               <h3 className="text-2xl font-semibold mb-6">Send Message</h3>
               
               <form onSubmit={handleSubmit} className="space-y-4">
-                {/* Hidden Web3Forms Access Key - Register at https://web3forms.com for free */}
-                <input type="hidden" name="access_key" value="8f3e0c1a-4b5d-4e2f-9a3b-1c8d7e6f5a4b" />
-                <input type="hidden" name="redirect" value="false" />
-                <input type="hidden" name="email" value="jakub.grzegorz.lacki@gmail.com" />
-                <input type="checkbox" name="botcheck" style={{ display: 'none' }} />
+                {/* Using FormSubmit.co - free email forwarding service */}
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_template" value="table" />
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <motion.div
