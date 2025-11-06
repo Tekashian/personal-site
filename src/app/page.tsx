@@ -158,9 +158,9 @@ export default function Home() {
             className="flex justify-center space-x-6 mb-12"
           >
             {[
-              { icon: Github, href: "#" },
-              { icon: Linkedin, href: "#" },
-              { icon: Mail, href: "#" }
+              { icon: Github, href: "https://github.com/Tekashian" },
+              { icon: Linkedin, href: "https://www.linkedin.com/in/jakub-%C5%82%C4%85cki-9a059a397/" },
+              { icon: Mail, href: "mailto:jakub.grzegorz.lacki@gmail.com" }
             ].map(({ icon: Icon, href }, index) => (
               <motion.a
                 key={index}
@@ -203,22 +203,25 @@ export default function Home() {
               </h2>
               <div className="space-y-4 text-gray-300 leading-relaxed">
                 <p className="text-lg">
-                  I&apos;m a passionate developer with over <span className="text-blue-400 font-semibold">3 years of experience</span> creating modern web applications. I specialize in both frontend and backend technologies.
+                  I&apos;m a <span className="text-blue-400 font-semibold">Blockchain Architect & Full-Stack Developer</span> with over <span className="text-purple-400 font-semibold">3 years of experience</span> building production-grade decentralized applications and high-performance trading systems.
                 </p>
                 <p>
-                  My journey with programming started from curiosity about the world of technology, which transformed into a true passion. I love solving complex problems and creating solutions that have a real impact on users.
+                  My expertise spans from <span className="text-emerald-400 font-semibold">architecting modular smart contract systems</span> like PolyFund (a comprehensive DAO governance and crowdfunding platform) to developing <span className="text-orange-400 font-semibold">microsecond-latency trading bots</span> for Binance FIX API using Go.
                 </p>
                 <p>
-                  Currently, I focus on developing with <span className="text-purple-400 font-semibold">React/Next.js</span> and <span className="text-green-400 font-semibold">Node.js</span>, but I&apos;m always open to learning new technologies.
+                  I specialize in <span className="text-cyan-400 font-semibold">multi-chain development</span> (Ethereum & Solana), having built on-chain analytics tools that monitor wallet addresses and track transactions in real-time. My work includes DeFi platforms with sophisticated tokenomics, automated escrow systems, and transparent governance mechanisms secured by OpenZeppelin standards.
+                </p>
+                <p>
+                  Beyond blockchain, I&apos;m proficient in modern web frameworks — from <span className="text-pink-400 font-semibold">React/Next.js</span> and <span className="text-green-400 font-semibold">Vue 3</span> to <span className="text-indigo-400 font-semibold">Gatsby</span>, crafting high-performance applications with advanced animations using Framer Motion, GSAP, and custom parallax implementations. I believe in writing clean, type-safe code with TypeScript and building systems that scale.
                 </p>
               </div>
               
               {/* Stats */}
               <div className="grid grid-cols-3 gap-6 pt-6">
                 {[
-                  { number: "15+", label: "Projects" },
+                  { number: "18+", label: "Projects" },
                   { number: "3+", label: "Years Experience" },
-                  { number: "50+", label: "Happy Clients" }
+                  { number: "2", label: "Blockchains" }
                 ].map((stat, index) => (
                   <motion.div
                     key={stat.label}
@@ -260,10 +263,10 @@ export default function Home() {
                 <h3 className="text-xl font-semibold text-center lg:text-left">Core Skills</h3>
                 <div className="space-y-3">
                   {[
-                    { skill: "Frontend Development", level: 90 },
-                    { skill: "Backend Development", level: 85 },
-                    { skill: "UI/UX Design", level: 75 },
-                    { skill: "Database Design", level: 80 }
+                    { skill: "Blockchain Development", level: 95 },
+                    { skill: "Smart Contracts (Solidity)", level: 90 },
+                    { skill: "Full-Stack Development", level: 92 },
+                    { skill: "Trading Systems & DeFi", level: 88 }
                   ].map((item, index) => (
                     <motion.div
                       key={item.skill}
@@ -651,8 +654,8 @@ export default function Home() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              "React", "Next.js", "TypeScript", "Node.js",
-              "Python", "PostgreSQL", "MongoDB", "AWS"
+              "Solidity", "Ethereum", "TypeScript", "React",
+              "Next.js", "Vue.js", "Go", "Web3.js"
             ].map((tech, index) => (
               <motion.div
                 key={tech}
@@ -704,9 +707,9 @@ export default function Home() {
               
               <div className="space-y-6">
                 {[
-                  { icon: Mail, title: "Email", info: "contact@example.com", link: "mailto:contact@example.com" },
-                  { icon: Github, title: "GitHub", info: "@username", link: "https://github.com/username" },
-                  { icon: Linkedin, title: "LinkedIn", info: "/in/username", link: "https://linkedin.com/in/username" }
+                  { icon: Mail, title: "Email", info: "jakub.grzegorz.lacki@gmail.com", link: "mailto:jakub.grzegorz.lacki@gmail.com" },
+                  { icon: Github, title: "GitHub", info: "@Tekashian", link: "https://github.com/Tekashian" },
+                  { icon: Linkedin, title: "LinkedIn", info: "Jakub Łącki", link: "https://www.linkedin.com/in/jakub-%C5%82%C4%85cki-9a059a397/" }
                 ].map(({ icon: Icon, title, info, link }, index) => (
                   <motion.a
                     key={title}
