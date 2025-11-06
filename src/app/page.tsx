@@ -484,13 +484,49 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
+                title: "Aromato Coffee Shop",
+                description: "Professional coffee shop landing page featuring parallax scrolling, reveal animations, and lightbox gallery. Built with pure HTML5, CSS3, and Vanilla JavaScript showcasing advanced DOM manipulation and modern CSS techniques.",
+                tech: ["HTML5", "CSS3", "Vanilla JS", "Parallax", "Responsive"],
+                image: "/videos/Aromato.png",
+                github: "https://github.com/Tekashian/Aromato",
+                live: "https://aromato.vercel.app/",
+                featured: true
+              },
+              {
+                title: "PolyFund Marketing Page",
+                description: "High-impact landing page for blockchain crowdfunding platform. Features animated hero with floating elements, scroll-triggered animations using Framer Motion, and performance-focused Next.js 14 implementation with TypeScript.",
+                tech: ["Next.js 14", "TypeScript", "Tailwind CSS", "Framer Motion"],
+                image: "/videos/PolyFund-landing.png",
+                github: "https://github.com/Tekashian/PolyFund-LandingPage",
+                live: "https://poly-fund-landing-page.vercel.app/",
+                featured: false
+              },
+              {
+                title: "Chronos Élite Watches",
+                description: "Luxury watch landing page built with Gatsby 5 and React 18. Features 3D product visualization, sophisticated animations with Framer Motion 10, and elegant design system perfect for premium products.",
+                tech: ["Gatsby 5", "React 18", "Framer Motion", "3D Effects"],
+                image: "/videos/watch-ladning-page.png",
+                github: "https://github.com/Tekashian/Watch-Landing-Page",
+                live: "https://watch-landing-page-psi.vercel.app/",
+                featured: false
+              },
+              {
+                title: "Blockchain Camp",
+                description: "Immersive landing page for Web3 programming course. Built with Vue 3 composition API, Vite, and GSAP for cinematic scroll experiences. Features custom Tailwind theme with glassmorphism UI and advanced scroll-triggered staging.",
+                tech: ["Vue 3", "Vite", "GSAP", "Tailwind CSS", "ScrollTrigger"],
+                image: "/videos/block-chain-camp.png",
+                github: "https://github.com/Tekashian/Blockchain-camp-landingPage",
+                live: "https://blockchain-camp-landing-page.vercel.app/",
+                featured: false
+              },
+              {
                 title: "AltrSeed DeFi Platform",
                 description: "Professional DeFi seed funding platform with sophisticated tokenomics and investor portal. Backend powered by CrowdFund smart contracts with automated milestone-based payments.",
                 tech: ["TypeScript", "Solidity", "DeFi", "Smart Contracts", "React"],
                 image: "/api/placeholder/400/250",
                 github: "https://github.com/Tekashian/AltrSeedFrontEnd",
                 live: "#",
-                featured: true
+                featured: false
               },
               {
                 title: "Decentralized Crowdfunding Core",
@@ -531,12 +567,24 @@ export default function Home() {
                 }`}
               >
                 <div className="relative bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm p-6 h-full">
-                  {/* Project Image Placeholder */}
-                  <div className="relative overflow-hidden rounded-lg mb-4 bg-gradient-to-br from-blue-600/20 to-purple-600/20 h-48 flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10" />
-                    <Play size={48} className="text-blue-400 opacity-70 group-hover:opacity-100 transition-opacity duration-300" />
+                  {/* Project Image */}
+                  <div className="relative overflow-hidden rounded-lg mb-4 h-48 group-hover:scale-105 transition-transform duration-500">
+                    {project.image.includes('placeholder') ? (
+                      <>
+                        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20 flex items-center justify-center">
+                          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10" />
+                          <Play size={48} className="text-blue-400 opacity-70 group-hover:opacity-100 transition-opacity duration-300" />
+                        </div>
+                      </>
+                    ) : (
+                      <img 
+                        src={project.image} 
+                        alt={project.title}
+                        className="w-full h-full object-cover rounded-lg"
+                      />
+                    )}
                     {project.featured && (
-                      <div className="absolute top-3 right-3 bg-gradient-to-r from-yellow-400 to-orange-500 text-black text-xs font-bold px-2 py-1 rounded-full">
+                      <div className="absolute top-3 right-3 bg-gradient-to-r from-yellow-400 to-orange-500 text-black text-xs font-bold px-2 py-1 rounded-full z-10">
                         Featured
                       </div>
                     )}
@@ -568,6 +616,8 @@ export default function Home() {
                     <div className="flex gap-3 pt-4">
                       <motion.a
                         href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         className="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-all duration-300 text-sm font-medium"
@@ -575,15 +625,19 @@ export default function Home() {
                         <Github size={16} />
                         Code
                       </motion.a>
-                      <motion.a
-                        href={project.live}
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-lg transition-all duration-300 text-sm font-medium"
-                      >
-                        <ExternalLink size={16} />
-                        Live Demo
-                      </motion.a>
+                      {project.live !== "#" && (
+                        <motion.a
+                          href={project.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-lg transition-all duration-300 text-sm font-medium"
+                        >
+                          <ExternalLink size={16} />
+                          Live Demo
+                        </motion.a>
+                      )}
                     </div>
                   </div>
 
