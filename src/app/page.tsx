@@ -111,11 +111,9 @@ export default function Home() {
       {/* Animated Background */}
       <div className="absolute inset-0">
         <div 
-          className="absolute w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"
+          className="absolute w-96 h-96 bg-blue-500/20 rounded-full blur-3xl transition-transform duration-75 ease-out"
           style={{
-            left: mousePosition.x - 192,
-            top: mousePosition.y - 192,
-            transition: "all 0.3s ease-out"
+            transform: `translate(${mousePosition.x - 192}px, ${mousePosition.y - 192}px)`
           }}
         />
         <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-purple-500/20 rounded-full blur-3xl animate-float" />
