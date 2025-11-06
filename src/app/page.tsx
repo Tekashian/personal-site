@@ -518,42 +518,6 @@ export default function Home() {
                 github: "https://github.com/Tekashian/Blockchain-camp-landingPage",
                 live: "https://blockchain-camp-landing-page.vercel.app/",
                 featured: false
-              },
-              {
-                title: "AltrSeed DeFi Platform",
-                description: "Professional DeFi seed funding platform with sophisticated tokenomics and investor portal. Backend powered by CrowdFund smart contracts with automated milestone-based payments.",
-                tech: ["TypeScript", "Solidity", "DeFi", "Smart Contracts", "React"],
-                image: "/api/placeholder/400/250",
-                github: "https://github.com/Tekashian/AltrSeedFrontEnd",
-                live: "#",
-                featured: false
-              },
-              {
-                title: "Decentralized Crowdfunding Core",
-                description: "Smart contract backend powering AltrSeed platform. Enables transparent project funding with automated escrow, milestone payments, and investor protection mechanisms.",
-                tech: ["Solidity", "Web3.js", "Smart Contracts", "Ethereum", "DeFi"],
-                image: "/api/placeholder/400/250",
-                github: "https://github.com/Tekashian/CrowdFund",
-                live: "#",
-                featured: false
-              },
-              {
-                title: "Binance FIX Trading Bot",
-                description: "High-frequency trading bot optimized for Binance FIX API with microsecond latency. Built in Go for maximum performance in financial markets operations.",
-                tech: ["Go", "Trading APIs", "Financial Systems", "Performance"],
-                image: "/api/placeholder/400/250",
-                github: "https://github.com/Tekashian/BinanceLimitFixBot-Najszybsza-optymalizacja",
-                live: "#",
-                featured: false
-              },
-              {
-                title: "Solana Blockchain Tools",
-                description: "Utility tools and analyzers for Solana blockchain ecosystem. Features transaction monitoring, wallet analysis, and custom RPC integrations for multi-chain development.",
-                tech: ["JavaScript", "Solana", "Blockchain Analysis", "RPC", "Web3"],
-                image: "/api/placeholder/400/250",
-                github: "https://github.com/Tekashian/solanachecker",
-                live: "#",
-                featured: false
               }
             ].map((project, index) => (
               <motion.div
