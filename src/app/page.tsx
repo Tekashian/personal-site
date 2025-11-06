@@ -172,8 +172,7 @@ export default function Home() {
             transition={{ duration: 1, delay: 0.2 }}
           >
             <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-blue-200 to-purple-300 bg-clip-text text-transparent">
-              Hi, I&apos;m a
-              <span className="block text-blue-400 animate-glow">Developer</span>
+              Hi, I&apos;m <span className="text-blue-400 animate-glow">Jakub</span>
             </h1>
           </motion.div>
 

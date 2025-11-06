@@ -24,8 +24,8 @@ const config: Config = {
           '50%': { transform: 'translateY(-20px)' },
         },
         glow: {
-          '0%': { boxShadow: '0 0 20px rgba(59, 130, 246, 0.5)' },
-          '100%': { boxShadow: '0 0 30px rgba(59, 130, 246, 0.8)' },
+          '0%': { textShadow: '0 0 20px rgba(59, 130, 246, 0.8), 0 0 30px rgba(59, 130, 246, 0.5)' },
+          '100%': { textShadow: '0 0 30px rgba(59, 130, 246, 1), 0 0 40px rgba(59, 130, 246, 0.7)' },
         },
         slideUp: {
           '0%': { transform: 'translateY(100px)', opacity: '0' },
