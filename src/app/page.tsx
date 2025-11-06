@@ -197,9 +197,14 @@ export default function Home() {
             >
               View My Projects
             </button>
-            <button className="px-8 py-4 border-2 border-blue-400 rounded-full font-semibold hover:bg-blue-400 hover:text-gray-900 transition-all duration-300 transform hover:scale-105">
-              Download CV
-            </button>
+            <a 
+              href="https://cv-nine-hazel.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-4 border-2 border-blue-400 rounded-full font-semibold hover:bg-blue-400 hover:text-gray-900 transition-all duration-300 transform hover:scale-105"
+            >
+              CV
+            </a>
           </motion.div>
 
           <motion.div
