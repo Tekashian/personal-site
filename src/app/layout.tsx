@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Portfolio - Modern Developer",
-  description: "A modern portfolio showcasing development skills and projects",
+  title: "Jakub Łącki Portfolio",
+  description: "Blockchain Architect & Full-Stack Developer - Building innovative Web3 applications and DeFi platforms",
 };
 
 export default function RootLayout({
