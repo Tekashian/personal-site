@@ -554,6 +554,157 @@ export default function Home() {
             </div>
           </motion.div>
 
+          {/* Featured Project - Office AI Agent */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="mb-16"
+          >
+            <div className="relative overflow-hidden rounded-2xl border border-white/20 bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-sm group hover:border-purple-400/50 transition-all duration-500">
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-pink-600/5" />
+              
+              {/* Featured Badge */}
+              <div className="absolute top-6 right-6 z-10">
+                <div className="bg-gradient-to-r from-purple-400 to-pink-500 text-white text-sm font-bold px-4 py-2 rounded-full flex items-center gap-2">
+                  <span className="w-2 h-2 bg-white/30 rounded-full animate-pulse" />
+                  AI Innovation
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8">
+                {/* Project Video */}
+                <div className="relative">
+                  <div className="aspect-video rounded-xl overflow-hidden group-hover:scale-105 transition-transform duration-500 border border-white/10 mb-4">
+                    <video 
+                      className="w-full h-full object-cover"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="auto"
+                    >
+                      <source src="/videos/Ai-Office.mp4" type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                  
+                  {/* AI Robot Icon */}
+                  <div className="flex justify-center items-center py-8">
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.6, delay: 0.2 }}
+                      viewport={{ once: true }}
+                      whileHover={{ scale: 1.05, rotate: -3 }}
+                      className="relative"
+                    >
+                      <div className="h-64 w-64 flex items-center justify-center bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-3xl border border-purple-500/30 backdrop-blur-sm">
+                        <svg className="w-32 h-32 text-purple-400" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 2c-1.1 0-2 .9-2 2v2H7c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-3V4c0-1.1-.9-2-2-2zm0 2c.6 0 1 .4 1 1v1h-2V5c0-.6.4-1 1-1zM7 8h10v10H7V8zm2 2v2h2v-2H9zm4 0v2h2v-2h-2zM9 14v2h2v-2H9zm4 0v2h2v-2h-2z"/>
+                          <circle cx="8" cy="4" r="1"/>
+                          <circle cx="16" cy="4" r="1"/>
+                        </svg>
+                      </div>
+                      <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-3xl blur-2xl opacity-0 hover:opacity-100 transition-opacity duration-500 scale-150" />
+                    </motion.div>
+                  </div>
+                  
+                  {/* Floating elements */}
+                  <div className="absolute -top-4 -right-4 w-8 h-8 bg-purple-500/30 rounded-full animate-float" />
+                  <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-pink-500/30 rounded-full animate-float" style={{ animationDelay: "1s" }} />
+                </div>
+
+                {/* Project Info */}
+                <div className="space-y-6 flex flex-col justify-center">
+                  <div>
+                    <h3 className="text-3xl md:text-4xl font-bold text-white mb-4 group-hover:text-purple-400 transition-colors duration-300">
+                      Office AI Agent 🤖
+                    </h3>
+                    <p className="text-gray-300 text-lg leading-relaxed">
+                      Advanced AI-powered office automation system that replaces traditional office tasks with intelligent automation. 
+                      Leverages cutting-edge language models (OpenAI, Anthropic) to handle email management, document generation, 
+                      web scraping, and scheduled workflows - all without requiring model training.
+                    </p>
+                  </div>
+
+                  {/* Key Features */}
+                  <div className="space-y-3">
+                    <h4 className="text-lg font-semibold text-purple-400">Key Features:</h4>
+                    <ul className="space-y-2 text-gray-300">
+                      <li className="flex items-center gap-2">
+                        <div className="w-1.5 h-1.5 bg-purple-400 rounded-full" />
+                        Conversational AI agent with context-aware responses
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <div className="w-1.5 h-1.5 bg-pink-400 rounded-full" />
+                        Automated email management with templates and bulk sending
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <div className="w-1.5 h-1.5 bg-fuchsia-400 rounded-full" />
+                        AI-powered PDF generation with customizable templates
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <div className="w-1.5 h-1.5 bg-violet-400 rounded-full" />
+                        Intelligent web scraping with data export (CSV, JSON)
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <div className="w-1.5 h-1.5 bg-indigo-400 rounded-full" />
+                        Scheduled cron jobs with monitoring and auto-retry
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <div className="w-1.5 h-1.5 bg-blue-400 rounded-full" />
+                        Real-time dashboard with performance metrics
+                      </li>
+                    </ul>
+                  </div>
+
+                  {/* Tech Stack */}
+                  <div className="space-y-3">
+                    <h4 className="text-lg font-semibold text-pink-400">Tech Stack:</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {["TypeScript", "Node.js", "Next.js 15", "React", "Express", "Supabase", "OpenAI API", "Anthropic", "PDFKit", "Nodemailer", "Cheerio", "node-cron", "Tailwind CSS"].map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-3 py-1 bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-300 text-sm rounded-full border border-purple-500/30"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Action Buttons */}
+                  <div className="flex flex-wrap gap-3 pt-4 relative z-20">
+                    <motion.a
+                      href="https://github.com/Tekashian/The-Office-AiAgent"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 rounded-xl transition-all duration-300 font-medium cursor-pointer relative z-10"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        window.open("https://github.com/Tekashian/The-Office-AiAgent", "_blank");
+                      }}
+                    >
+                      <Github size={20} />
+                      <span>View on GitHub</span>
+                    </motion.a>
+                    <motion.div
+                      whileHover={{ scale: 1.05 }}
+                      className="flex items-center gap-2 px-6 py-3 bg-white/10 rounded-xl font-medium text-gray-400 cursor-not-allowed relative z-10"
+                    >
+                      <ExternalLink size={20} />
+                      <span>Coming Soon</span>
+                    </motion.div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
           {/* Other Projects Grid */}
           <div className="space-y-8">
             <h3 className="text-2xl font-semibold text-center text-gray-300">Other Projects</h3>
