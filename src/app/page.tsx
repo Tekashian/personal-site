@@ -624,7 +624,7 @@ export default function Home() {
                     </h3>
                     <p className="text-gray-300 text-lg leading-relaxed">
                       Advanced AI-powered office automation system that replaces traditional office tasks with intelligent automation. 
-                      Leverages cutting-edge language models (OpenAI, Anthropic) to handle email management, document generation, 
+                      Leverages Google Gemini 2.5 API to handle email management, document generation, 
                       web scraping, and scheduled workflows - all without requiring model training.
                     </p>
                   </div>
@@ -664,7 +664,7 @@ export default function Home() {
                   <div className="space-y-3">
                     <h4 className="text-lg font-semibold text-pink-400">Tech Stack:</h4>
                     <div className="flex flex-wrap gap-2">
-                      {["TypeScript", "Node.js", "Next.js 15", "React", "Express", "Supabase", "OpenAI API", "Anthropic", "PDFKit", "Nodemailer", "Cheerio", "node-cron", "Tailwind CSS"].map((tech) => (
+                      {["TypeScript", "Node.js", "Next.js 15", "React", "Express", "Supabase", "Google Gemini 2.5", "PDFKit", "Nodemailer", "Cheerio", "node-cron", "Tailwind CSS"].map((tech) => (
                         <span
                           key={tech}
                           className="px-3 py-1 bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-300 text-sm rounded-full border border-purple-500/30"
