@@ -712,6 +712,15 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
+                title: "AI Searcher 🔍",
+                description: "Intelligent research agent powered by Google Gemini 2.5 Flash, Tavily web search, and ChromaDB vector storage. Features automated PDF report generation, RAG system, retry logic with exponential backoff, and production-grade caching. Perfect for automated research workflows.",
+                tech: ["Python", "FastAPI", "Google Gemini", "Tavily API", "ChromaDB", "ReportLab", "Docker"],
+                image: "/videos/AiSercher.png",
+                github: "https://github.com/Tekashian/Ai-Resercher-Agent",
+                live: "#",
+                featured: true
+              },
+              {
                 title: "Aromato Coffee Shop",
                 description: "Professional coffee shop landing page featuring parallax scrolling, reveal animations, and lightbox gallery. Built with pure HTML5, CSS3, and Vanilla JavaScript showcasing advanced DOM manipulation and modern CSS techniques.",
                 tech: ["HTML5", "CSS3", "Vanilla JS", "Parallax", "Responsive"],
@@ -817,7 +826,7 @@ export default function Home() {
                         <Github size={16} />
                         Code
                       </motion.a>
-                      {project.live !== "#" && (
+                      {project.live && project.live !== "#" && (
                         <motion.a
                           href={project.live}
                           target="_blank"
