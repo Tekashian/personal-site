@@ -434,7 +434,7 @@ export default function Home() {
                   {/* Logo */}
                   <div className="flex justify-center items-center py-8">
                     <motion.a
-                      href="https://github.com/Tekashian/PoliDao-frontend"
+                      href="https://poly-fund.vercel.app/"
                       target="_blank"
                       rel="noopener noreferrer"
                       initial={{ opacity: 0, scale: 0.8 }}
@@ -605,28 +605,87 @@ export default function Home() {
                   
                   {/* AI Robot Icon */}
                   <div className="flex justify-center items-center py-8">
-                    <motion.div
+                    <motion.a
+                      href="https://github.com/Tekashian/The-Office-AiAgent"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       initial={{ opacity: 0, scale: 0.8 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.6, delay: 0.2 }}
                       viewport={{ once: true }}
                       whileHover={{ scale: 1.05, rotate: -3 }}
-                      className="relative"
+                      className="relative cursor-pointer"
                     >
-                      <div className="h-64 w-64 flex items-center justify-center bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-3xl border border-purple-500/30 backdrop-blur-sm">
-                        <svg className="w-32 h-32 text-purple-400" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M12 2c-1.1 0-2 .9-2 2v2H7c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-3V4c0-1.1-.9-2-2-2zm0 2c.6 0 1 .4 1 1v1h-2V5c0-.6.4-1 1-1zM7 8h10v10H7V8zm2 2v2h2v-2H9zm4 0v2h2v-2h-2zM9 14v2h2v-2H9zm4 0v2h2v-2h-2z"/>
-                          <circle cx="8" cy="4" r="1"/>
-                          <circle cx="16" cy="4" r="1"/>
+                      <div className="h-64 w-64 flex items-center justify-center bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-3xl border border-purple-500/30 backdrop-blur-sm relative overflow-hidden">
+                        {/* Neural network background */}
+                        <div className="absolute inset-0 opacity-20">
+                          <svg className="w-full h-full" viewBox="0 0 200 200">
+                            <defs>
+                              <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style={{ stopColor: '#a855f7', stopOpacity: 0.3 }} />
+                                <stop offset="100%" style={{ stopColor: '#ec4899', stopOpacity: 0.3 }} />
+                              </linearGradient>
+                            </defs>
+                            {/* Neural network lines */}
+                            <line x1="30" y1="50" x2="100" y2="100" stroke="url(#grad1)" strokeWidth="1" className="animate-pulse" />
+                            <line x1="170" y1="50" x2="100" y2="100" stroke="url(#grad1)" strokeWidth="1" className="animate-pulse" style={{ animationDelay: '0.5s' }} />
+                            <line x1="30" y1="150" x2="100" y2="100" stroke="url(#grad1)" strokeWidth="1" className="animate-pulse" style={{ animationDelay: '1s' }} />
+                            <line x1="170" y1="150" x2="100" y2="100" stroke="url(#grad1)" strokeWidth="1" className="animate-pulse" style={{ animationDelay: '1.5s' }} />
+                            <circle cx="30" cy="50" r="4" fill="#a855f7" className="animate-pulse" />
+                            <circle cx="170" cy="50" r="4" fill="#ec4899" className="animate-pulse" style={{ animationDelay: '0.5s' }} />
+                            <circle cx="30" cy="150" r="4" fill="#a855f7" className="animate-pulse" style={{ animationDelay: '1s' }} />
+                            <circle cx="170" cy="150" r="4" fill="#ec4899" className="animate-pulse" style={{ animationDelay: '1.5s' }} />
+                          </svg>
+                        </div>
+                        
+                        {/* Main AI Brain Icon */}
+                        <svg className="w-32 h-32 relative z-10" viewBox="0 0 100 100" fill="none">
+                          {/* Brain outline */}
+                          <defs>
+                            <linearGradient id="brainGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                              <stop offset="0%" style={{ stopColor: '#a855f7' }} />
+                              <stop offset="50%" style={{ stopColor: '#d946ef' }} />
+                              <stop offset="100%" style={{ stopColor: '#ec4899' }} />
+                            </linearGradient>
+                          </defs>
+                          
+                          {/* Left hemisphere */}
+                          <path d="M30 25 Q20 25 15 35 Q10 45 15 55 Q18 65 25 70 L40 70 Q35 60 35 50 Q35 40 30 25Z" 
+                                fill="url(#brainGrad)" opacity="0.6" className="animate-pulse" />
+                          
+                          {/* Right hemisphere */}
+                          <path d="M70 25 Q80 25 85 35 Q90 45 85 55 Q82 65 75 70 L60 70 Q65 60 65 50 Q65 40 70 25Z" 
+                                fill="url(#brainGrad)" opacity="0.6" className="animate-pulse" style={{ animationDelay: '0.5s' }} />
+                          
+                          {/* Neural connections */}
+                          <circle cx="30" cy="40" r="3" fill="#a855f7" className="animate-pulse" />
+                          <circle cx="70" cy="40" r="3" fill="#ec4899" className="animate-pulse" style={{ animationDelay: '0.3s' }} />
+                          <circle cx="50" cy="35" r="3" fill="#d946ef" className="animate-pulse" style={{ animationDelay: '0.6s' }} />
+                          <circle cx="35" cy="55" r="2.5" fill="#a855f7" className="animate-pulse" style={{ animationDelay: '0.9s' }} />
+                          <circle cx="65" cy="55" r="2.5" fill="#ec4899" className="animate-pulse" style={{ animationDelay: '1.2s' }} />
+                          
+                          {/* Connection lines */}
+                          <line x1="30" y1="40" x2="50" y2="35" stroke="#a855f7" strokeWidth="1.5" opacity="0.6" />
+                          <line x1="70" y1="40" x2="50" y2="35" stroke="#ec4899" strokeWidth="1.5" opacity="0.6" />
+                          <line x1="35" y1="55" x2="50" y2="35" stroke="#d946ef" strokeWidth="1.5" opacity="0.6" />
+                          <line x1="65" y1="55" x2="50" y2="35" stroke="#d946ef" strokeWidth="1.5" opacity="0.6" />
+                          
+                          {/* Circuit board elements */}
+                          <rect x="45" y="75" width="10" height="3" fill="#a855f7" opacity="0.8" />
+                          <rect x="40" y="80" width="20" height="2" fill="#ec4899" opacity="0.8" />
+                          <circle cx="38" cy="81" r="1.5" fill="#a855f7" />
+                          <circle cx="62" cy="81" r="1.5" fill="#ec4899" />
                         </svg>
+                        
+                        {/* Floating particles */}
+                        <div className="absolute top-4 left-4 w-2 h-2 bg-purple-400 rounded-full animate-float opacity-60" />
+                        <div className="absolute top-8 right-6 w-1.5 h-1.5 bg-pink-400 rounded-full animate-float opacity-60" style={{ animationDelay: '0.5s' }} />
+                        <div className="absolute bottom-6 left-8 w-1.5 h-1.5 bg-fuchsia-400 rounded-full animate-float opacity-60" style={{ animationDelay: '1s' }} />
+                        <div className="absolute bottom-8 right-4 w-2 h-2 bg-violet-400 rounded-full animate-float opacity-60" style={{ animationDelay: '1.5s' }} />
                       </div>
                       <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-3xl blur-2xl opacity-0 hover:opacity-100 transition-opacity duration-500 scale-150" />
-                    </motion.div>
+                    </motion.a>
                   </div>
-                  
-                  {/* Floating elements */}
-                  <div className="absolute -top-4 -right-4 w-8 h-8 bg-purple-500/30 rounded-full animate-float" />
-                  <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-pink-500/30 rounded-full animate-float" style={{ animationDelay: "1s" }} />
                 </div>
 
                 {/* Project Info */}
