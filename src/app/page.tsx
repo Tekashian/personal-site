@@ -412,7 +412,12 @@ export default function Home() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8">
                 {/* Project Image */}
                 <div className="relative">
-                  <div className="aspect-video rounded-xl overflow-hidden group-hover:scale-105 transition-transform duration-500 border border-white/10 mb-4">
+                  <a 
+                    href="https://poly-fund.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block aspect-video rounded-xl overflow-hidden group-hover:scale-105 transition-transform duration-500 border border-white/10 mb-4 cursor-pointer"
+                  >
                     <video 
                       className="w-full h-full object-cover"
                       autoPlay
@@ -424,17 +429,20 @@ export default function Home() {
                       <source src="/videos/demo2.mp4" type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
-                  </div>
+                  </a>
                   
                   {/* Logo */}
                   <div className="flex justify-center items-center py-8">
-                    <motion.div
+                    <motion.a
+                      href="https://github.com/Tekashian/PoliDao-frontend"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       initial={{ opacity: 0, scale: 0.8 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.6, delay: 0.2 }}
                       viewport={{ once: true }}
                       whileHover={{ scale: 1.05, rotate: 3 }}
-                      className="relative"
+                      className="relative cursor-pointer"
                     >
                       <img 
                         src="/videos/logo2.png" 
@@ -442,7 +450,7 @@ export default function Home() {
                         className="h-64 w-auto object-contain filter drop-shadow-2xl hover:drop-shadow-3xl transition-all duration-300"
                       />
                       <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-teal-500/10 rounded-full blur-2xl opacity-0 hover:opacity-100 transition-opacity duration-500 scale-150" />
-                    </motion.div>
+                    </motion.a>
                   </div>
                   
                   {/* Floating elements */}
@@ -576,7 +584,12 @@ export default function Home() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8">
                 {/* Project Video */}
                 <div className="relative">
-                  <div className="aspect-video rounded-xl overflow-hidden group-hover:scale-105 transition-transform duration-500 border border-white/10 mb-4">
+                  <a
+                    href="https://github.com/Tekashian/The-Office-AiAgent"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block aspect-video rounded-xl overflow-hidden group-hover:scale-105 transition-transform duration-500 border border-white/10 mb-4 cursor-pointer"
+                  >
                     <video 
                       className="w-full h-full object-cover"
                       autoPlay
@@ -588,7 +601,7 @@ export default function Home() {
                       <source src="/videos/Ai-Office.mp4" type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
-                  </div>
+                  </a>
                   
                   {/* AI Robot Icon */}
                   <div className="flex justify-center items-center py-8">
@@ -778,11 +791,18 @@ export default function Home() {
                         </div>
                       </>
                     ) : (
-                      <img 
-                        src={project.image} 
-                        alt={project.title}
-                        className="w-full h-full object-cover rounded-lg"
-                      />
+                      <a 
+                        href={project.live && project.live !== "#" ? project.live : project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block w-full h-full cursor-pointer"
+                      >
+                        <img 
+                          src={project.image} 
+                          alt={project.title}
+                          className="w-full h-full object-cover rounded-lg"
+                        />
+                      </a>
                     )}
                     {project.featured && (
                       <div className="absolute top-3 right-3 bg-gradient-to-r from-yellow-400 to-orange-500 text-black text-xs font-bold px-2 py-1 rounded-full z-10">
