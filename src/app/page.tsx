@@ -585,7 +585,7 @@ export default function Home() {
                 {/* Project Video */}
                 <div className="relative">
                   <a
-                    href="https://github.com/Tekashian/The-Office-AiAgent"
+                    href="https://aioffice.vercel.app/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block aspect-video rounded-xl overflow-hidden group-hover:scale-105 transition-transform duration-500 border border-white/10 mb-4 cursor-pointer"
@@ -606,7 +606,7 @@ export default function Home() {
                   {/* AI Robot Icon */}
                   <div className="flex justify-center items-center py-8">
                     <motion.a
-                      href="https://github.com/Tekashian/The-Office-AiAgent"
+                      href="https://aioffice.vercel.app/"
                       target="_blank"
                       rel="noopener noreferrer"
                       initial={{ opacity: 0, scale: 0.8 }}
@@ -755,22 +755,30 @@ export default function Home() {
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 rounded-xl transition-all duration-300 font-medium cursor-pointer relative z-10"
+                      className="flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 rounded-xl transition-all duration-300 font-medium cursor-pointer relative z-10"
                       onClick={(e) => {
                         e.stopPropagation();
                         window.open("https://github.com/Tekashian/The-Office-AiAgent", "_blank");
                       }}
                     >
                       <Github size={20} />
-                      <span>View on GitHub</span>
+                      <span>GitHub</span>
                     </motion.a>
-                    <motion.div
+                    <motion.a
+                      href="https://aioffice.vercel.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       whileHover={{ scale: 1.05 }}
-                      className="flex items-center gap-2 px-6 py-3 bg-white/10 rounded-xl font-medium text-gray-400 cursor-not-allowed relative z-10"
+                      whileTap={{ scale: 0.95 }}
+                      className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 rounded-xl transition-all duration-300 font-medium cursor-pointer relative z-10"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        window.open("https://aioffice.vercel.app/", "_blank");
+                      }}
                     >
                       <ExternalLink size={20} />
-                      <span>Coming Soon</span>
-                    </motion.div>
+                      <span>Live Demo</span>
+                    </motion.a>
                   </div>
                 </div>
               </div>
