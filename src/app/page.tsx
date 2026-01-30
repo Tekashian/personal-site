@@ -189,7 +189,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
+            className="flex justify-center items-center mb-12"
           >
             <button 
               onClick={() => scrollToSection('projects')}
@@ -197,14 +197,6 @@ export default function Home() {
             >
               View My Projects
             </button>
-            <a 
-              href="https://cv-nine-hazel.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-8 py-4 border-2 border-blue-400 rounded-full font-semibold hover:bg-blue-400 hover:text-gray-900 transition-all duration-300 transform hover:scale-105"
-            >
-              CV
-            </a>
           </motion.div>
 
           <motion.div
